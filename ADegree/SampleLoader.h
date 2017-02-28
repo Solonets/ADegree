@@ -5,7 +5,7 @@ class SampleLoader :
 	public GraphLoader
 {
 public:
-	SampleLoader() {}
+	SampleLoader();
 	virtual void load_names();
 	virtual void load_edges();
 	

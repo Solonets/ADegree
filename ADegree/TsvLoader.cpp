@@ -24,7 +24,7 @@ void TsvLoader::load_edges()
 	while (in >> edge_in)
 	{
 		in >> edge_out;
-		this->push_edge(edge_in, edge_out);
+		this->push_edge(edge_in, edge_out, 1);
 	}
 }
 

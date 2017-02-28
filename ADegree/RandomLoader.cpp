@@ -26,7 +26,7 @@ void RandomLoader::load_edges()
 		for (int j = 0; j < d; j++)
 		{
 			int out = std::rand() % vn;
-			push_edge(i, out);
+			push_edge(i, out, 0);
 		}
 	}
 }

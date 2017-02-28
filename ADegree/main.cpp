@@ -13,18 +13,18 @@
 using namespace Gecode;
 int main(int argc, char* argv[]) {
 	//GraphLoader *gl = new TsvLoader("data/wiki/articles.tsv", "data/wiki/links.tsv");
-	//GraphLoader *gl = new SampleLoader();
-	GraphLoader *gl = new RandomLoader(100, 40, 105);
+	GraphLoader *gl = new SampleLoader();
+	//GraphLoader *gl = new RandomLoader(150, 30, 100);  //150 30 100 k=3 6.5s
 	AConstraintGraph *graph = NULL;
 	graph = gl->get();
 	delete gl;
-	graph->applyKDegree(3);
+	graph->applyKDegree(2);
 	graph->debug();
 	auto t1 = std::chrono::high_resolution_clock::now();
 	if (true)
 	{
 		Search::Options o;
-		o.threads = 2;
+		o.threads =	8;
 		BAB<AConstraintGraph> e(graph, o);
 		bool solution = false;
 		while (AConstraintGraph* s = e.next()) {
